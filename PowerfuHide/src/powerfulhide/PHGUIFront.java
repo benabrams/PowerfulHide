@@ -37,9 +37,13 @@ public class PHGUIFront extends javax.swing.JFrame {
         jRadioButtonGet = new javax.swing.JRadioButton();
         jRadioButtonUse = new javax.swing.JRadioButton();
         jPanelEnviron = new javax.swing.JPanel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListInventory = new javax.swing.JList();
         jScrollBar1 = new javax.swing.JScrollBar();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -61,15 +65,34 @@ public class PHGUIFront extends javax.swing.JFrame {
 
         jRadioButtonUse.setText("Use");
 
+        jLayeredPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLayeredPane1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 458, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanelEnvironLayout = new javax.swing.GroupLayout(jPanelEnviron);
         jPanelEnviron.setLayout(jPanelEnvironLayout);
         jPanelEnvironLayout.setHorizontalGroup(
             jPanelEnvironLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 464, Short.MAX_VALUE)
+            .addGroup(jPanelEnvironLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane1))
         );
         jPanelEnvironLayout.setVerticalGroup(
             jPanelEnvironLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1)
         );
 
         jListInventory.setModel(new javax.swing.AbstractListModel() {
@@ -79,12 +102,20 @@ public class PHGUIFront extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jListInventory);
 
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(111, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButtonMove)
                     .addComponent(jRadioButtonExamine)
@@ -128,11 +159,35 @@ public class PHGUIFront extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLayeredPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLayeredPane1MouseClicked
+        if(jRadioButtonUse.isSelected()){
+            jTextAreaDescription.append("You tried to use something\n");
+        }
+        else if(jRadioButtonExamine.isSelected()){
+            jTextAreaDescription.append("You tried to examine something\n");
+        }
+        else if(jRadioButtonGet.isSelected()){
+            jTextAreaDescription.append("You tried to get something\n");
+        }
+        else if(jRadioButtonMove.isSelected()){
+            jTextAreaDescription.append("You tried to move something\n");
+        }
+        else if(jRadioButtonPull.isSelected()){
+            jTextAreaDescription.append("You tried to pull something\n");
+        }
+        else if(jRadioButtonPush.isSelected()){
+            jTextAreaDescription.append("You tried to push something\n");
+        }
+        else{
+            jTextAreaDescription.append("No command selected\n");
+        }
+    }//GEN-LAST:event_jLayeredPane1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -171,7 +226,11 @@ public class PHGUIFront extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JList jListInventory;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelEnviron;
     private javax.swing.JRadioButton jRadioButtonExamine;
     private javax.swing.JRadioButton jRadioButtonGet;

@@ -33,10 +33,30 @@ public class PHMenu extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
 
         jbuttonNew.setText("New Game");
+        jbuttonNew.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbuttonNewMouseClicked(evt);
+            }
+        });
 
         jButtonLoad.setText("Load Game");
+        jButtonLoad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonLoadMouseClicked(evt);
+            }
+        });
 
         jButtonQuit.setText("Quit Game");
+        jButtonQuit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonQuitMouseClicked(evt);
+            }
+        });
+        jButtonQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonQuitActionPerformed(evt);
+            }
+        });
 
         jTextField1.setText("Powerful Hide");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +99,22 @@ public class PHMenu extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButtonQuitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonQuitMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonQuitMouseClicked
+
+    private void jButtonLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonLoadMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonLoadMouseClicked
+
+    private void jbuttonNewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbuttonNewMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbuttonNewMouseClicked
+
+    private void jButtonQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButtonQuitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
